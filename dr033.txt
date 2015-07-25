@@ -1,0 +1,155 @@
+                   -=DERCZ ROGUE 0.33=-
+    (Najbardziej Niebezpieczna Gra Dercza Stanislawa)
+
+               "To jest moja najbardziej niebezpieczna gra,
+                  w ktorej kazdy z Was predzej lub pozniej
+                                bedzie musial wziac udzial.
+                                   Gra ta nosi zapach sera,
+                                  a kto nie gra ten umiera."
+				    -- S.Dercz, Poczdam 1752
+
+
+ DROGUE to tekstowa gra roguelike napisana w jezyku c.
+ ten dokument opisuje jak grac w drogue 0.33.
+
+1. GRA ------------------------------------------------------
+  Postac ktora kieruje gracz to smialy czarownik Dercz ktory
+ udaje sie  w  szamanska podroz  do  swiata podziemnego  aby
+ odzyskac swoja skradziona dusze.
+  W wyprawie  przeszkadzaja mu  rozne niezwykle istoty  oraz
+ pulapki. Aby sobie z nimi poradzic  czarownik  musi zbierac
+ przedmioty  jak  bron,  elementy pancerza,  zrodla swiatla,
+ pigulki, totemy itp.
+  W czasie gry postac zbiera tez  krysztalki Niderytu  ktore
+ decyduja o  jego wyniku  na koncu gry  (w  wypadku smierci,
+ rezygnacji z dalszej gry lub wygranej).
+ Dusza Dercza  znajduje sie  na  poziomie 1023 - dotarcie do
+ tego poziomu jest wiec jednoznaczne z wygrana.
+
+2. EKRAN GRY -------------------------------------------------
+ sklada sie z trzech czesci:
+
+ 2.1 pasek stanu
+  znajduje sie w dolnej czesci ekranu. zawiera nastepujace
+  informacje:
+  poziom - poziom podziemii (lub jak kto woli pietro) na ktorym
+  znajduje sie gracz
+  fz - fluid zycia (obecny/maksymalny)
+       fluid zycia okresla stan zdrowia postaci.
+       kiedy osiaga zero postac umiera.
+  si - sila
+       sila okresla sile ataku i obrony (blokowania ciosow)
+       im wieksza tym silniejsza jest postac.
+  kb - klasa broni
+       klasa obecnie uzywanej broni. sila ciosu to iloczyn
+       sily postaci i klasy jej broni
+  kp - klasa pancerza
+       laczna klasa noszonych elementow pancerza. sila
+       bloku to iloczyn sily postaci i klasy jej pacerzy.
+  p.wtajemn. - poziom wtajemniczenia w Najbardziej Niebezpieczna Gre.
+               gdy poziom sie zwieksza cechy postaci rowniez rosna.
+  niderty - ilosc zebranych krysztalow niderytu.
+
+ czasem ponizej paska stanu znajduja sie czerwone oznaczenia
+ stanow w jakich znajduje sie gracz np popazony, przyspieszony,
+ oslepiony itp.
+   
+ 2.2 pasek wiadomosci
+  znajduje sie w gornej czesci ekranu. zawiera komunikaty
+  dotyczace zdarzen takich jak zadanie/otrzymanie ciosu,
+  zejscie na nizszy poziom, uzycie przedmiotu itp.
+  czasem kiedy wiadomosci zajmuja wiecej niz jedna linijke
+  na koncu paska wiadomosci pokazuje sie -spacja-, wowczas
+  zanim gracz bedzie mogl wykonac kolejny ruch nalezy wcisnac
+  spacje.
+
+ 2.3 plansza gry
+  zajmuje wiekszosc ekranu. przedstawia graficzna reprezentacje
+  miejsca w ktorym znajduje sie postac, przebywajacych tam
+  stworzen, przedmiotow, pulapek itp.
+
+   | - sciana
+     . podloga
+     # korytarz
+     + zamkniety wlaz
+     : otwarty wlaz
+     > zejscie na nizszy poziom
+
+     m maszyna (przeniesien, pyrowid)
+     $ fontanna
+
+     ^ znana pulapka
+
+     * nideryt
+
+     @  postac (gracz)
+  a-z,
+  A-Z  potwory
+
+       ] bron
+   [ ( ) element pancerza
+       $ zrodlo swiatla
+       ! pigulka
+       ? totem, amulet czy cos.
+
+    0 pojemnik. 
+ 
+ 3.POLECENIA --------------------------------------------------------
+  polecenia wydaje sie poprzez wcisniecie klawisza.
+  aby poznac dostepne komendy wystarczy wcisnac "?".
+  wyswietli sie pelna ich lista.
+
+  (jesli w wybranym kierunku znajduje sie potwor to ruch staje
+   sie atakiem; jesli jest tam zamkniety wlaz to ruch staje sie
+   otwarciem).
+
+ 4.PRZEDMIOTY -------------------------------------------------------
+ przedmioty mozna podnosic [,], wyrzucac [w], rzucac nimi [t+kier.]
+ oraz uzywac [a]. uzycie broni, pancerza, zrodla swiatla lub torby
+ polega na zalozeniu/zdjeciu tegoz, uzycie pigulki na jej zjedzeniu.
+ rzucajac przedmiotem w pojemnik mozna doprowadzic do jego wybuchu.
+[...]
+
+ 5.PULAPKI ---------------------------------------------------------- 
+ mozna je rozbroic wykonujac na nich akcje [o].
+[...]
+
+ 6.POJEMNIKI --------------------------------------------------------
+ mozna je przesuwac, rozbijac (akcja, ale to kiepski pomysl bo one
+ wybuchaja) i rzucac w nie przedmiotami (tez wybuchaja).
+ mozna wiec budowac z nich wybuchajace pulapki.
+[...] 
+
+ 7.MASZYNY I INNE CUDA ----------------------------------------------
+ maszyna przeniesien to urzadzenie ktore ulatwia poruszanie sie
+ po poziomach. wykonanie akcji [o] na niej powoduje ze bohater
+ zostanie przeniesiony w losowy punkt poziomu.
+
+ pyrowid gdy wykonac na nim akcje zsyla objawienie z ksztaltem
+ calego poziomu.
+
+ kiedy ranny napije sie z fontanny glupcow jego obrazenia
+ lecza sie. podobnie moze sie stac w wypadku dotkniecia
+ oddychajacej sciany.
+
+ 8.JAK GRAC ---------------------------------------------------------
+ ostroznie.
+
+
+
+                                #
+                              ## # #
+                            #   #
+                           ############
+                          ## ###  ### ##
+                         #     #  #     #
+                         # #####  ##### #
+                         # #   #  #   # #
+                         # ### #  #### ##
+                          ###  #  #  ###
+                           ############
+                                  #
+                              #   ##
+                                ##
+                                #
+
